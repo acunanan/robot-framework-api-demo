@@ -8,3 +8,7 @@ Response Field Value Should Be
     #${resp}    Convert String to JSON    ${response.content}
     ${actual_value}    Get Value From Json    ${response.json()}    ${json_path}
     Should Be Equal    ${actual_value}    ${expected_value}
+
+Response Body Should Be
+    [Arguments]    ${response}    ${expected_value}
+    Should Be Equal As Strings    ${response.content}    ${expected_value}

@@ -10,8 +10,8 @@ Request should return HTTP response status code 200 WHEN GET /__admin/mappings i
     Response Status Code Should Be    ${response}    200
     Delete All Sessions
 
-Request should return response body WHEN GET /__admin/mappings is invoked
+Request should return response body WHEN wiremock server is hit
     Create Session    my_session    ${HOST}
     ${response}    Get request    my_session    /two
-    Response Field Value Should Be    ${response}    $.mappings[1].response.body    Body content
+    Response Body Should Be    ${response}    Body content
     Delete All Sessions
