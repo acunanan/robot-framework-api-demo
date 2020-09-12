@@ -2,6 +2,6 @@
 Library    JSONLibrary
 Library    RequestsLibrary
 Library    Collections
-Library    os
+Library    OperatingSystem
 Library    BuiltIn
 Library    requests
